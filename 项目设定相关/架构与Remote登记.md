@@ -56,5 +56,7 @@ StarterPlayerScripts/
 | RequestDig | RemoteEvent | 客户端→服务端 | Round | 请求翻找某个垃圾堆 | 垃圾堆存在、距离、冷却 | 设计中，未实现 |
 | RequestPickup | RemoteEvent | 客户端→服务端 | Round | 长按拾取批量基础垃圾（节流打包） | Part 存在且未被抢占、距离 | 设计中，未实现 |
 | RequestSell | RemoteEvent | 客户端→服务端 | Round | 回收站卖出背包内容 | 背包数量以服务端记账为准 | 设计中，未实现 |
+| EntranceCountdownSync | RemoteEvent | 服务端→客户端 | Home | 通知本地玩家当前是否在某个 Entrance_Solo 倒计时中，驱动 LeaveButton 显示和倒计时文本 | 无（服务端主动推送，不接收客户端输入） | 已实现 |
+| RequestLeaveEntrance | RemoteEvent | 客户端→服务端 | Home | 玩家点击 LeaveButton，请求强制离开当前占用的 Entrance_Solo | 校验发起玩家确实是某个入口当前记录的占用者，忽略非占用者的请求 | 已实现 |
 
 新增或修改 Remote：先在这张表加一行/改一行，再写代码，最后回来把"状态"从"设计中"改成"已实现"。
